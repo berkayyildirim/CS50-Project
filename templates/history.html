@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Expenses</th>
+                <th>Amount</th>
+                <th>Note</th>
+                <th>Date</th>
+                <th>Index</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                {% for row in rows %}
+                    <td>{{ row["expenses"] }}</td>
+                    <td>{{ row["amount"] }}</td>
+                    <td>{{ row["note"] }}</td>
+                    <td>{{ row["date"] }}</td>
+                    <td>{{ row["counter"] }}</td>
+
+            </tr>
+                {% endfor %}
+
+            <tr>
+                <td>Total Expenditure</td>
+                {% for row in rows1 %}
+                    <td>{{ row["spend"] }}</td>
+                {% endfor %}
+                <td colspan="3"></td>
+            </tr>
+        </tbody>
+    </table>
+{% endblock %}

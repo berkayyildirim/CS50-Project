@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Income
+{% endblock %}
+
+{% block main %}
+    <iframe src="https://calendar.google.com/calendar/embed?title=FINANCE&amp;showPrint=0&amp;showTabs=0&amp;showTz=0&amp;height=350&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=8vh4avn0puem9na6lkc07dmdhc%40group.calendar.google.com&amp;color=%23B1440E&amp;ctz=America%2FChicago" style="border-width:0" width="350" height="350" frameborder="0" scrolling="no"></iframe>
+    <form action="/delete" method="post" autofocus name="name" placeholder="name" type="text">
+        <div class="form-group">
+            <select class="form-control" name="expenses">
+                <option disabled selected value>Expenses</option>
+                    <option value="mobilization">Mobilization</option>
+                    <option value="excavation">Excavation</option>
+                    <option value="foundation">Foundation</option>
+                    <option value="structural">Structural</option>
+                    <option value="architectural">Architectural</option>
+                    <option value="plumbing">Plumbing</option>
+                    <option value="hvac">HVAC</option>
+                    <option value="electrical">Electrical</option>
+                    <option value="landscaping">Landscaping</option>
+                    <option value="others">Others</option>
+
+            </select>
+        </div>
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="amount" placeholder="Amount" type="number" step="0.01" min="0">
+        </div>
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="note" placeholder="Note" type="text">
+        </div>
+
+        <button class="btn btn-primary" type="submit">Submit</button>
+    </form>
+
+{% endblock %}

@@ -1,0 +1,46 @@
+
+{% extends "layout.html" %}
+
+{% block title %}
+    Plot
+{% endblock %}
+
+{% block main %}
+    <h1 align="middle">Overview</h1>
+    <img src="/static/images/pie.png" alt="bar chart" style="width:400px;height:400px;" align="middle">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Mobilization</th>
+                <th>Excavation</th>
+                <th>Foundation</th>
+                <th>Structural</th>
+                <th>Architectural</th>
+                <th>Plumbing</th>
+                <th>HVAC</th>
+                <th>Electrical</th>
+                <th>Landscaping</th>
+                <th>Others</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                {% for row in totals %}
+                    <td>{{ row["mobilization"] }}</td>
+                    <td>{{ row["excavation"] }}</td>
+                    <td>{{ row["foundation"] }}</td>
+                    <td>{{ row["structural"] }}</td>
+                    <td>{{ row["architectural"] }}</td>
+                    <td>{{ row["plumbing"] }}</td>
+                    <td>{{ row["hvac"] }}</td>
+                    <td>{{ row["electrical"] }}</td>
+                    <td>{{ row["landscaping"] }}</td>
+                    <td>{{ row["others"] }}</td>
+                {% endfor %}
+
+
+            </tr>
+
+        </tbody>
+    </table>
+{% endblock %}

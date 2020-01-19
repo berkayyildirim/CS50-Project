@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    controlpanel
+{% endblock %}
+{% block head %}
+    <link href="{{ url_for('static', filename='controlpanel_styles.css') }}" rel="stylesheet"/>
+{% endblock %}
+
+{% block main %}
+    <!-- Create structural Redirect Button -->
+    <form action="{{ url_for('structural') }}" method="get">
+        <fieldset>
+            <div id = "left">
+                <div class="form-group">
+                    <button class="btn btn-warning" type="submit">Structural</button>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+    <!-- Create architectural Redirect Button -->
+    <form action="{{ url_for('architectural') }}" method="get">
+        <fieldset>
+            <div id = "center">
+                <div class="form-group">
+                    <button class="btn btn-warning" type="submit">Architectural</button>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+    <!-- Create hvac Redirect Button -->
+    <form action="{{ url_for('hvac') }}" method="get">
+        <fieldset>
+            <div id = "right">
+                <div class="form-group">
+                    <button class="btn btn-warning" type="submit">HVAC</button>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+    <!-- Create electrical Redirect Button -->
+    <form action="{{ url_for('electrical') }}" method="get">
+        <fieldset>
+            <div id = "right">
+                <div class="form-group">
+                    <button class="btn btn-warning" type="submit">Electrical</button>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+{% endblock %}
